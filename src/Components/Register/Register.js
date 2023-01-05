@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom'
+import { authProvider } from '../Contexts/UserContext';
 
 const Register = () => {
+  const {user,createUser} = useContext(authProvider)
     const {register, handleSubmit, formState:{errors}} = useForm();
 
 
     const handleRegister  = (data)=>{
-       
+       const {name,email,password} = data;
+       createUser(email,password)
+       .then(data =>{
+        console.log(data.user)
+       })
+       .catch(err => console.log(err))
     }
 
 
@@ -54,7 +61,7 @@ const Register = () => {
           </div>
           
           <button type="submit" className="btn btn-success w-full mt-4">Register</button>
-          {/* <p className="text-center text-sm mt-[6px]">Already have an account?<Link to='/login' className="text-secondary">Login</Link></p> */}
+          <p className="text-center text-sm mt-[6px]">Already have an account?<Link to='/login' className="text-secondary">Login</Link></p>
         </form>
     </div>
   )
