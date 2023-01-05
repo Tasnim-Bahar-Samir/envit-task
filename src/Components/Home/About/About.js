@@ -6,7 +6,7 @@ const About = () => {
     <div className=' my-24 md:px-24 mb-44 p-2'>
         <h3 className='text-center text-3xl font-bold text-orange-600'>About</h3>
         <h2 className='text-center text-4xl mb-5'>Let's know about us</h2>
-        <div className='relative flex flex-col md:flex-row justify-between items-center'>
+        <div className='relative flex gap-3 flex-col md:flex-row justify-between items-center'>
         <div className='md:pl-24 md:w-1/2'
         >
             <img className='w-96' src={img2} alt="" />
@@ -14,7 +14,7 @@ const About = () => {
         </div>
         <div className='md:w-1/2 md:mt-24 mt-44'
         >
-            <p>A photographer capture the life.I had started photographing as a fassionate way.Now im a professional photographer, videographer and editor also.I do all these thing from my heart.I have done a lot of projects.I always love to do these things.</p>
+            <p>We are a volunteer flatform. We work for helpless people. We collect donation and make plan according to our collection. And help poor people from the donation. By getting more donation from you we believe that we can help more people. And our mission is to be part of all the helpless people.</p>
         </div>
         
     </div>

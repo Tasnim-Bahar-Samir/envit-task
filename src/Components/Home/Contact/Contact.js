@@ -13,8 +13,10 @@ const Contact = () => {
     emailjs.sendForm('service_nfcpj2h', 'template_o8jmm9l', form.current, 'ZUW9TzzxieswQrWmB')
       .then((result) => {
           toast.success('Email send successfully')
+          e.target.reset()
       }, (error) => {
           toast.success('Email send successfully')
+          e.target.reset()
       });
   };
   return (
