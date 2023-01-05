@@ -6,6 +6,7 @@ import { authProvider } from '../Contexts/UserContext';
 
 const Register = () => {
   const {user,createUser} = useContext(authProvider)
+  const navigate = useNavigate()
     const {register, handleSubmit, formState:{errors}} = useForm();
 
 
@@ -14,13 +15,16 @@ const Register = () => {
        createUser(email,password)
        .then(data =>{
         console.log(data.user)
+        navigate('/')
        })
-       .catch(err => console.log(err))
+       .catch(err => {
+        toast.error(err.message)
+       })
     }
 
 
   return (
-    <div>
+    <div className='mb-24'>
         <form onSubmit={handleSubmit(handleRegister)} className="mx-auto border-2 p-5 rounded-md mt-14 text-left md:w-[500px]" >
             <h3 className='text-2xl font-semibold  my-3'>Register</h3>
           <div className="form-control w-full ">
@@ -60,7 +64,7 @@ const Register = () => {
             {errors.password && <p className="text-red-600" role="alert">{errors.password?.message}</p>}
           </div>
           
-          <button type="submit" className="btn btn-success w-full mt-4">Register</button>
+          <button type="submit" className="btn bg-orange-600 w-full mt-4">Register</button>
           <p className="text-center text-sm mt-[6px]">Already have an account?<Link to='/login' className="text-secondary">Login</Link></p>
         </form>
     </div>

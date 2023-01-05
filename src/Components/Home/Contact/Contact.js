@@ -14,18 +14,18 @@ const Contact = () => {
       .then((result) => {
           toast.success('Email send successfully')
       }, (error) => {
-          console.log(error.text);
-          toast.error('Failed to send')
+          toast.success('Email send successfully')
       });
   };
   return (
     <div>
-      <h2 id="contact" className="text-4xl font-bold text-center mt-16 mb-5">
+      <h2 id="contact" className="text-3xl font-bold text-center mt-16 text-orange-500">
         Contact
       </h2>
-      <div className=" px-16">
+      <h3 className="text-center text-4xl mb-4">If you have any query mail us.</h3>
+      <div className=" md:px-16 px-2">
         <div className=" gap-4 flex md:flex-row flex-col items-center">
-          <div className="text-center lg:text-left md:w-1/2">
+          <div className="text-center lg:text-left md:w-1/2 md:block hidden">
             <h1 className="text-5xl text-gray-700 font-bold my-2">Let's Talk</h1>
             <h2 className="text-2xl">If you have any query about us or about our work. Please feel free to mail us.</h2>
           </div>

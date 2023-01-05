@@ -10,10 +10,10 @@ import img6 from "../../../images/gallery/img6.jpg";
 const Gallery = () => {
   const imgages = [img1, img2, img3, img4, img5, img6, img6, img6];
   return (
-    <div className="my-24">
-        <h4 className="text-center text-orange-600 text-3xl">Our Gallery</h4>
+    <div className="my-24 md:px-24 p-2">
+        <h4 className="text-center text-orange-600 font-bold text-3xl">Our Gallery</h4>
         <h2 className="text-center text-4xl mb-6">See some images from our recent works</h2>
-      <div className="px-20 " style={{ columns: "3", columnGap: "0px" }}>
+      <div className="" style={{ columns: "3", columnGap: "0px" }}>
         {imgages.map((img, i) => (
           <PhotoProvider key={i}>
             <PhotoView src={img}>

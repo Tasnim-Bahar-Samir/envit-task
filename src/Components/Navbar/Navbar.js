@@ -1,20 +1,25 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import logo from '../../images/logo.webp'
 import { authProvider } from '../Contexts/UserContext'
 import {FaUserAlt} from 'react-icons/fa'
 const Navbar = () => {
-    const{user} = useContext(authProvider)
+    const{user,userLogOut} = useContext(authProvider)
+    const navigate = useNavigate()
     console.log(user)
+    const handleLogout = ()=>{
+        userLogOut()
+        navigate('/login')
+    }
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar bg-base-100 md:px-10 px-2">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </label>
       <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a>Home</a></li>
+        <li ><Link to='/'>Home</Link></li>
         <li tabIndex={0}>
           <a className="justify-between">
             Events
@@ -27,13 +32,16 @@ const Navbar = () => {
           </ul>
         </li>
         <li><a>Contact Us</a></li>
+        <div className='form-control'>
+    <input type="text" placeholder="Search" className="input input-bordered" />
+  </div>
       </ul>
     </div>
-    <a className="btn btn-ghost normal-case text-xl">SaveLife</a>
+    <Link to='/' className="normal-case md:text-4xl text-xl font-bold flex items-center"><img className='w-24' src={logo} alt="" /> Save<span className='text-orange-600'>Life</span></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><a>Home</a></li>
+      <li><Link to='/'>Home</Link></li>
       <li tabIndex={0}>
         <a>
           Events
@@ -49,7 +57,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end  flex md:gap-5 gap-1">
-  <div className='form-control'>
+  <div className='form-control md:block hidden'>
     <input type="text" placeholder="Search" className="input input-bordered" />
   </div>
   {
@@ -68,11 +76,11 @@ const Navbar = () => {
             Profile
           </a>
         </li>
-        <li><a>Logout</a></li>
+        <li onClick={handleLogout}><a>Logout</a></li>
       </ul>
     </div>
     :
-    <Link className='btn'>Login</Link>
+    <Link to='/login' className='btn'>Login</Link>
   }
   </div>
 </div>

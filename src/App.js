@@ -1,3 +1,4 @@
+import { Toaster } from 'react-hot-toast';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
 import Home from './Components/Home/Home';
@@ -14,7 +15,12 @@ function App() {
         {
           path:'/',
           element:<Home/>
-        },{
+        },
+        {
+          path:'/home',
+          element:<Home/>
+        },
+        {
           path: '/login',
           element: <Login/>
         },
@@ -27,10 +33,11 @@ function App() {
     
   ])
   return (
-    <RouterProvider router={router} className="App">
-      
-      <Register/>
+    <div>
+      <Toaster/>
+      <RouterProvider router={router} className="App">
     </RouterProvider>
+    </div>
   );
 }
 

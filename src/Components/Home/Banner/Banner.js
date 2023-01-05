@@ -32,10 +32,10 @@ export default function Banner() {
         className="mySwiper"
       >
         <SwiperSlide><div className='banner-img w-full h-full'>
-        <img src={img1} alt='img' className="w-full h-full rounded-lg" />
+        <img src={img3} alt='img' className="w-full h-full rounded-lg" />
     </div>
     <div className="absolute text-white transform -translate-y-1/2 left-24 top-1/2 text-left ">
-      <h1 className='text-6xl font-bold text-white'>Donate for Humanity </h1>
+      <h1 className='md:text-6xl text-2xl font-bold text-white '>Donate for Humanity </h1>
         <p className='text-lg w-1/2 my-8'>Raise your hand for poor families.</p>
         <button className='px-3 py-3 bg-orange-600 text-white rounded-md'>Discover More</button>
         <button className='px-3 py-2 border-2 ml-5 text-white rounded-md'>Latest Project</button>
@@ -53,7 +53,7 @@ export default function Banner() {
         </SwiperSlide>
         <SwiperSlide>
         <div className='banner-img w-full h-full'>
-        <img src={img3} alt='img' className="w-full h-full rounded-lg" />
+        <img src={img1} alt='img' className="w-full h-full rounded-lg" />
     </div>
     <div className="absolute text-white transform -translate-y-1/2 left-24 top-1/2 text-left ">
       <h1 className='text-6xl font-bold text-white'>Donate for Humanity </h1>
